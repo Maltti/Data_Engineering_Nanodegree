@@ -36,11 +36,6 @@ In IPython:
 * Execute the script to generate the database and its tables by executing `python3 create_tables.py`.
 * Load the data and insert it to the database by executing `python3 etl.py`.
 
-After examining the Log and Song JSON files, I created a Star schema (shown below) that include one Fact table (songplays) and 4 Dimension tables.
-
-<img src="erd-diagram.png" alt="ERD Diagram" width="800"/>
-
-This design will offer flexibility with the queries being used for analysis.
 
 ## ETL Process
 
@@ -117,6 +112,6 @@ A Python script that defines all the SQL statements used by this project.
 
 A Python Jupyter Notebook that was used to test that data was loaded properly.
 
-### Purpose of this database
+## Purpose of this database
 
 This database allows to aggregate all songs, artists, users and songplays in a single database. In this way, the company disposes of the needed data stored in a unique structure and can thus analyze different scenarios easily. For instance, one can analyze the popularity of different songs or artists. Also, it is possible to perform analysis with geographic information. One can for instance determine which song is popular in which country and region.
