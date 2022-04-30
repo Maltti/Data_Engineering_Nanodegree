@@ -88,27 +88,27 @@ This directory contains a collection of JSON log files. These files are used to 
 
 This directory contains a collection of Song JSON files. These files are used to populate Dimension tables for Songs and Artists.
 
-## create_tables.py
+### create_tables.py
 
 This Python script recreates the database and tables used to storethe data.
 
-## etl.ipynb
+### etl.ipynb
 
 A Python Jupyter Notebook that was used to initially explore the data and test the ETL process.
 
-## etl.py
+### etl.py
 
 This Python script reads in the Log and Song data files, processes and inserts data into the database.
 
-## requirements.txt
+### requirements.txt
 
 A list of Python modules used by this project.
 
-## sql_queries.py
+### sql_queries.py
 
 A Python script that defines all the SQL statements used by this project.
 
-## test.ipynb
+### test.ipynb
 
 A Python Jupyter Notebook that was used to test that data was loaded properly.
 
