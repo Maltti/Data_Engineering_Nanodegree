@@ -64,6 +64,3 @@ Well, the real answer is, to get experience with a NoSQL database. But if think 
 
 Perhaps you have LARGE amounts of data. Because a relational database can only be scaled by adding machine memory, its very possible to have a table too large for a single machine. So if you want distributed tables, NoSQL is what you want. Some other potential reasons are: need for high throughput that isn't slowed down by ACID transactions or high availability. In our case Apache Cassandra is an AP tolerant system, so we're optimizing for availability and partition tolerance.
 
-**What are the caveats of a NoSQL database like Apache Cassandra?**
-
-So first off, based on CAP Theorem, we know that what's being sacrificed by our AP tolerant system is _consistency_. Which means it's possible that a read from our DB might not give us the most up to date information, instead we settle for _eventual consistency_. Another thing we must take into account is the lack of `JOIN`s. One of the nice aspects of a relational database is the query flexibility and capability to do aggregations. With Cassandra, we don't have that ability, so instead we must know about the queries our Data Scientists would like before hand so we can model our tables to fit them. And if our queries change, so must our tables.
