@@ -5,8 +5,31 @@ A music streaming startup, Sparkify, has grown their user base and song database
 
 In this project, we will create an ETL pipeline to build a data warehouses hosted on Redshift. 
 
+In this project we are going to use two Amazon Web Services resources:
+* [S3](https://aws.amazon.com/en/s3/)
+* [AWS Redshift](https://aws.amazon.com/en/redshift/)
+
+The data sources to ingest into data warehouse are provided by two public S3 buckets:
+
+1. Songs bucket (s3://udacity-dend/song_data), contains info about songs and artists. 
+All files are in the same directory.
+2. Event bucket (s3://udacity-dend/log_data), contains info about actions done by users, what song are listening, ... 
+We have differents directories so we need a descriptor file (also a JSON) in order to extract
+data from the folders by path. We used a descriptor file (s3://udacity-dend/log_json_path.json) because we 
+don't have a common prefix on folders
+
+The objects contained in both buckets are JSON files. The song bucket has all
+the files under the same directory but <br> the event ones don't,
+so we need a descriptor file (also a JSON) in order to extract
+data from the folders by path. We used a descriptor file because we don't 
+have a common prefix on folders
+
+We need to ingest this data into AWS Redshift using COPY command. This command get JSON files
+from buckets and copy them into staging tables inside AWS Redshift.
+
 ## Song Dataset 
 We will be working with two datasets that reside in S3. 
+
 
 #### Song Dataset: 
 It's a subset of real data from [Million Song Dataset](https://labrosa.ee.columbia.edu/millionsong/). Each file is in JSON format and contains metadata about a song and the artist of that song. The files are partitioned by the first three letters of each song's track ID.
@@ -190,6 +213,5 @@ Number of rows in each table:
 | songs            | 14896 |
 | time             |  8023 |
 | users            |  105  |
-
 
 
