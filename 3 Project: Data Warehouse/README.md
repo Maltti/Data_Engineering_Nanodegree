@@ -27,10 +27,6 @@ have a common prefix on folders
 We need to ingest this data into AWS Redshift using COPY command. This command get JSON files
 from buckets and copy them into staging tables inside AWS Redshift.
 
-## Song Dataset 
-We will be working with two datasets that reside in S3. 
-
-
 #### Song Dataset: 
 It's a subset of real data from [Million Song Dataset](https://labrosa.ee.columbia.edu/millionsong/). Each file is in JSON format and contains metadata about a song and the artist of that song. The files are partitioned by the first three letters of each song's track ID.
 
