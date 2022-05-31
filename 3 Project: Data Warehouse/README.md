@@ -90,32 +90,13 @@ LOG_DATA='s3://udacity-dend/log_data'
 LOG_JSONPATH='s3://udacity-dend/log_json_path.json'
 SONG_DATA='s3://udacity-dend/song_data'
 
-[AWS]
-KEY=
-SECRET=
 
-[DWH]
-DWH_CLUSTER_TYPE       = multi-node
-DWH_NUM_NODES          = 4
-DWH_NODE_TYPE          = dc2.large
-DWH_CLUSTER_IDENTIFIER = 
-DWH_DB                 = 
-DWH_DB_USER            = 
-DWH_DB_PASSWORD        = 
-DWH_PORT               = 5439
-DWH_IAM_ROLE_NAME      = 
 ```
-
-2. Create a python environment with the dependencies listed on *requirements.txt*
-3. Run the *create_cluster* script to set up the needed infrastructure for this project.
-
-    `$ python create_cluster.py`
-
-4. Run the *create_tables* script to set up the database staging and analytical tables
+2. Run the *create_tables* script to set up the database staging and analytical tables
 
     `$ python create_tables.py`
 
-5. Finally, run the *etl* script to extract data from the files in S3, stage it in redshift, and finally store it in the dimensional tables.
+3. Finally, run the *etl* script to extract data from the files in S3, stage it in redshift, and finally store it in the dimensional tables.
 
     `$ python create_tables.py`
 
