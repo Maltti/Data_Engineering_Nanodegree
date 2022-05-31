@@ -69,48 +69,6 @@ songplays - records in event data associated with song plays. Columns for the ta
     start_time, hour, day, week, month, year, weekday
 
 
-## How to Run
-#### Use [Redshift_Cluster_IaC.py](https://github.com/san089/Data_Engineering_Projects/blob/master/Redshift_Cluster_IaC.py "Redshift_Cluster_IaC.py") from [Data_Engineering_Projects](https://github.com/san089/Data_Engineering_Projects) to launch Redshift Cluster.
-
-#### Setup Configurations 
-Setup the dwh.cfg file (File not added in this repository). File format for **dwh.cfg**
-
-```
-[CLUSTER]
-HOST=''
-DB_NAME=''
-DB_USER=''
-DB_PASSWORD=''
-DB_PORT=5439
-
-[IAM_ROLE]
-ARN=<IAM Role arn>
-
-[S3]
-LOG_DATA='s3://udacity-dend/log_data'
-LOG_JSONPATH='s3://udacity-dend/log_json_path.json'
-SONG_DATA='s3://udacity-dend/song_data'
-
-```
-
-#### Create tables
-
-    $ python create_tables.py
-
-#### Load Data
-
-    $ python create_tables.py
-
-
-Reference: [AWS Redshift Doc](https://aws.amazon.com/redshift/getting-started/?p=rs&bttn=hero&exp=b)
-
-# Project Datawarehouse
-
-## Project description
-
-Sparkify is a music streaming startup with a growing user base and song database.
-
-Their user activity and songs metadata data resides in json files in S3. The goal of the current project is to build an ETL pipeline that extracts their data from S3, stages them in Redshift, and transforms data into a set of dimensional tables for their analytics team to continue finding insights in what songs their users are listening to. 
 
 ## How to run
 
