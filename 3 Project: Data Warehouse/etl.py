@@ -16,21 +16,6 @@ def insert_tables(cur, conn):
         cur.execute(query)
         conn.commit()
         
-def get_results(cur, conn):
-    """
-    Get the number of rows stored into each table
-    """
-    tables_rowsCount=""
-    for query in select_number_rows_queries:
-        print('Running ' + query)
-        cur.execute(query)
-        results = cur.fetchone()
-
-        for row in results:
-            print("   ", row)
-             #tables_rowsCount= tables_rowsCount +str(query)+"  " +str(row) +'\n'
-        #print(tables_rowsCount)
-        
 def main():
     config = configparser.ConfigParser()
     config.read('dwh.cfg')
@@ -38,12 +23,12 @@ def main():
     conn = psycopg2.connect("host={} dbname={} user={} password={} port={}".format(*config['CLUSTER'].values()))
     cur = conn.cursor()
     
-    print ("load_staging_tables")
+    #print ("load_staging_tables")
     load_staging_tables(cur, conn)
-    print ("")
-    print ("load_insert_tables")
+    #print ("")
+    #print ("load_insert_tables")
     insert_tables(cur, conn)
-    print ("")
+    #print ("")
     get_results(cur, conn)
 
     conn.close()

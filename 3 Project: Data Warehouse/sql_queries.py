@@ -122,7 +122,7 @@ staging_events_copy = ("""
 """).format(data_bucket=config['S3']['LOG_DATA'], role_arn=config['IAM_ROLE']['ARN'], log_json_path=config['S3']['LOG_JSONPATH'])
 
 staging_songs_copy = ("""
-    copy staging_songs from 's3://udacity-dend/song_data/A/A/A'
+    copy staging_songs from {data_bucket}
     credentials 'aws_iam_role={role_arn}'
     region 'us-west-2' format as JSON 'auto';
 """).format(data_bucket=config['S3']['SONG_DATA'], role_arn=config['IAM_ROLE']['ARN'])
@@ -195,34 +195,6 @@ songplay_table_insert = ("""
     AND e.page  =  'NextSong'
 """)
 
-# GET NUMBER OF ROWS IN EACH TABLE
-get_number_staging_events = ("""
-    SELECT COUNT(*) FROM staging_events
-""")
-
-get_number_staging_songs = ("""
-    SELECT COUNT(*) FROM staging_songs
-""")
-
-get_number_songplays = ("""
-    SELECT COUNT(*) FROM songplays
-""")
-
-get_number_users = ("""
-    SELECT COUNT(*) FROM users
-""")
-
-get_number_songs = ("""
-    SELECT COUNT(*) FROM songs
-""")
-
-get_number_artists = ("""
-    SELECT COUNT(*) FROM artists
-""")
-
-get_number_time = ("""
-    SELECT COUNT(*) FROM time
-""")
 
 # QUERY LISTS
 
