@@ -98,7 +98,7 @@ SONG_DATA='s3://udacity-dend/song_data'
 
 3. Finally, run the *etl* script to extract data from the files in S3, stage it in redshift, and finally store it in the dimensional tables.
 
-    `$ python create_tables.py`
+    `$ python etl.py`
 
 
 ## Project structure
