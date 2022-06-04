@@ -137,6 +137,10 @@ State and justify your database schema design and ETL pipeline.
 
 ## Queries and Results
 
+Run the *create_tables* script to set up the database staging and analytical tables
+
+    `$ python create_tables.py`
+    
 Number of rows in each table:
 
 | Table            | rows  |
