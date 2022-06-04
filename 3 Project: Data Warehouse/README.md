@@ -143,7 +143,6 @@ State and justify your database schema design and ETL pipeline.
 
     `$ python create_tables.py`
 
-3. F
     
 Number of rows in each table:
 
