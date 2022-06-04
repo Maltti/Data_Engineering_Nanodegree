@@ -140,7 +140,9 @@ State and justify your database schema design and ETL pipeline.
 ```
 Run the *row_numbers* script in order to find out the numbers of rows in each table
 
-    `$ python rows_numbers.py`    
+    `$ python rows_numbers.py`
+    
+
 Number of rows in each table:
 
 | Table            | rows  |
@@ -152,5 +154,3 @@ Number of rows in each table:
 | songs            | 14896 |
 | time             |  8023 |
 | users            |  105  |
-
-
